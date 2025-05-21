@@ -471,7 +471,7 @@ function Home() {
                             <div className="mt-15 space-y-4 text-sm font-medium bleu">
                                 <div className="flex items-center gap-2">
                                     <img src={tel} alt="telephone" className="w-7" />
-                                    <a href="tel:+2218400602">+221 840 06 02</a> | <a href="tel:+2216804994">+221 680 49 94</a>
+                                    <a href="tel:+221338400602">+221 33 840 06 02</a> | <a href="tel:+221776804994">+221 77 680 49 94</a>
                                 </div>
 
                                 <div className="flex items-start gap-2 uppercase">
