@@ -10,8 +10,16 @@ body {
   font-family: 'Merriweather Sans', sans-serif;
 }
 .bg-gradient {
-    background: linear-gradient(90deg, #017EFF, #014C99); /* Exemple de dégradé */
+    background: linear-gradient(90deg, #017EFF, #014C99); 
 }
 .bg-gradient-hover:hover {
-    background: linear-gradient(90deg, #017EFF, #014C99); /* Exemple de dégradé */
+    background: linear-gradient(90deg, #017EFF, #014C99); 
+}
+.bleu {
+    color: #017EFF;
+}
+.text-gradient {
+    background: linear-gradient(90deg, #017EFF, #014C99); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
