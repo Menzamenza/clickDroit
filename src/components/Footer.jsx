@@ -35,7 +35,7 @@ const Footer = () => {
                 <div>
                     <h3 className="text-lg font-semibold mb-4  ">CONTACT</h3>
                     <ul className="space-y-2 text-xs text-gray-200">
-                        <li><a href="tel:+2218400602" className="hover:border-b hover:text-white">+221 840 06 02</a> | <a href="tel:+2216804994" className="hover:border-b hover:text-white">+221 680 49 94</a></li>
+                        <li><a href="tel:+221338400602" className="hover:border-b hover:text-white">+221 33 840 06 02</a> | <a href="tel:+221776804994" className="hover:border-b hover:text-white">+221 77 680 49 94</a></li>
                         <li><a href="" className="hover:border-b hover:text-white">Sacré Cœur 3, Montagne Rue SC-45,
                             Villa nº64, Dakar - Sénégal</a></li>
                         <li><a href="mailto:contact@clicdroitafrique.com" className="hover:border-b hover:text-white">contact@clicdroitafrique.com</a></li>
