@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/logo.svg";
 import { ArrowRightEndOnRectangleIcon } from "@heroicons/react/24/solid";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState(false);
@@ -10,49 +11,31 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <img src={logo} alt="logo click droit" />
 
-                <ul className="hidden lg:flex space-x-8 text-gray-400 font-semibold text-sm">
-                    <li>
-                        <a
-                            href="#"
-                            className="inline-block border-b-2 border-blue-500 text-blue-500 transition-all duration-300"
-                        >
-                            Accueil
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            className="inline-block border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 transition-all duration-300"
-                        >
-                            À propos
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            className="inline-block border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 transition-all duration-300"
-                        >
-                            Services
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            className="inline-block border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 transition-all duration-300"
-                        >
-                            Secteurs d'activité
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            className="inline-block border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 transition-all duration-300"
-                        >
-                            Contact
-                        </a>
-                    </li>
-                </ul>
 
+                <ul className="hidden lg:flex space-x-8 font-semibold text-sm">
+                    {[
+                        { name: 'Accueil', to: '/' },
+                        { name: 'À propos', to: 'propos' },
+                        { name: 'Création d\'entreprise', to: '/creation' },
+                        { name: 'Services', to: '/services' },
+                        { name: 'Secteurs d\'activité', to: '/secteurs' },
+                        { name: 'Contact', to: '/contact' },
+                    ].map((item, index) => (
+                        <li key={index}>
+                            <NavLink
+                                to={item.to}
+                                className={({ isActive }) =>
+                                    `inline-block border-b-2 transition-all duration-300 ${isActive
+                                        ? 'text-blue-500 border-blue-500'
+                                        : 'text-gray-400 border-transparent hover:border-blue-500 hover:text-blue-500'
+                                    }`
+                                }
+                            >
+                                {item.name}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
 
 
                 <div>

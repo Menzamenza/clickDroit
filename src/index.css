@@ -18,8 +18,37 @@ body {
 .bleu {
     color: #017EFF;
 }
+.bg-bleu {
+  background: #017EFF;
+}
+.bg-pack{
+    background: #CBE6FF;
+}
+.border-bleu {
+  border-color: #017EFF;
+}
+.bg-bleuClair{
+  background: #F7FBFF;
+}
 .text-gradient {
     background: linear-gradient(90deg, #017EFF, #014C99); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  height: 3px;
+  width: 2px;
+}
+/* pour firefox */
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #017EFF #F7FBFF; /* bleu et gris clair */
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #017EFF; /* bleu */
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color:#F7FBFF ; /* gris clair */
 }
