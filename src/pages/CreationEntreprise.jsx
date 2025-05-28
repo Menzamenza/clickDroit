@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import creerEntrepCartes from '../CardDatas/creerEntrepData';
@@ -11,8 +12,11 @@ import OngletsPacks from '../components/Pack';
 const CreationEntreprise = () => {
     const [selectedCard, setSelectedCard] = useState(null);
 
+    
+    const navigate = useNavigate();
     const handleSelect = (id) => {
         setSelectedCard(id);
+        navigate(`/creation/${id}`);
     };
     return (
         <>
@@ -141,13 +145,13 @@ const CreationEntreprise = () => {
             </section>
 
             {/* quatrieme section */}
-             <section className='px-6 my-20'>
+            <section className='px-6 my-20'>
                 <div className=' w-full md:w-2/3 mx-auto flex flex-col  justify-between items-center  my-10'>
                     <p className=' merriweather-sans text-xl md:text-4xl font-extrabold  text-center'>Choisissez la forme juridique adaptée</p>
                     <p className='text-sm md:text-lg text-center mt-4'>Découvrez les différentes structures juridiques disponibles et leurs spécificités.</p>
                 </div>
-               
-               <Onglets />
+
+                <Onglets />
             </section>
 
             {/* formules section */}
@@ -156,16 +160,16 @@ const CreationEntreprise = () => {
                     <p className=' merriweather-sans text-xl md:text-4xl font-extrabold  text-center'>Nos formules d'accompagnement</p>
                     <p className='text-sm md:text-lg text-center mt-4'>Des solutions à vos besoins et à votre budget</p>
                 </div>
-               
-               <OngletsPacks />
+
+                <OngletsPacks />
             </section>
-            
+
             {/* last but one section */}
             <section className='px-6 my-20'>
                 <div className=' w-full md:w-2/3 mx-auto flex flex-col  justify-between items-center  my-10'>
                     <p className=' merriweather-sans text-xl md:text-4xl font-extrabold  text-center'>Ce que disent nos clients</p>
                 </div>
-               
+
                 <CarouselCartes />
             </section>
 

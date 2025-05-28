@@ -3,6 +3,7 @@ import CreationEntreprise from './pages/CreationEntreprise';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Home from './pages/Accueil';
+import CreationEtapes from './pages/CreationEtapes';
 
 
 
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/creation" element={<CreationEntreprise />} /> 
-        {/* <Route path="/services" element={<Services />} /> etc.pour les autres pages */}
+        <Route path="/creation/:typeId" element={<CreationEtapes />} />
       </Routes>
     </BrowserRouter>
   );
