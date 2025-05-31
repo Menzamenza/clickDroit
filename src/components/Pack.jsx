@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const OngletsPacks = () => {
+const OngletsPacks = ({ hideTabs = false }) => {
     const onglets = [
         {
             key: "sarl",
@@ -27,7 +27,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "99000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -95,7 +95,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "99000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -162,7 +162,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "69000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -227,7 +227,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "129000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -295,7 +295,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "169000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -363,7 +363,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "119000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -431,7 +431,7 @@ const OngletsPacks = () => {
                     ],
                 },
                 {
-                    nom: "Pack SUCCES",
+                    nom: "Pack Succes",
                     prix: "169000 FCFA TTC",
                     desc: `+ Honoraires du notaire : 150.000 FCFA capital inférieur à 500.000 FCFA et 250.000 FCFA Capital entre 500.000 et 5 millions FCFA (Les honoraires du notaire sont défalqués directement sur le montant du capital)`,
                     options: [
@@ -478,28 +478,28 @@ const OngletsPacks = () => {
 
     const [ongletActif, setOngletActif] = useState(onglets[0].key);
     const onglet = onglets.find(o => o.key === ongletActif);
-
-
     const [packActif, setPackActif] = useState(null);
 
     return (
         <div className="w-full md:w-2/3 mx-auto my-10 text-center">
             {/* Onglets */}
-            <div className=" bg-white flex flex-wrap lg:grid lg:grid-cols-7 justify-between gap-1 mb-6 border border-gray-300 rounded-full p-2">
-                {onglets.map(({ key, label }) => (
-                    <div>
-                        <button
-                            key={key}
-                            onClick={() => setOngletActif(key)}
-                            className={`w-full px-4 py-2 rounded-full text-xs lg:text-sm transition ${ongletActif === key
-                                ? "bg-bleu text-white"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-300"
-                                }`}>
-                            {label}
-                        </button>
-                    </div>
-                ))}
-            </div>
+            {!hideTabs && (
+                <div className=" bg-white flex flex-wrap lg:grid lg:grid-cols-7 justify-between gap-1 mb-6 border border-gray-300 rounded-full p-2">
+                    {onglets.map(({ key, label }) => (
+                        <div>
+                            <button
+                                key={key}
+                                onClick={() => setOngletActif(key)}
+                                className={`w-full px-4 py-2 rounded-full text-xs lg:text-sm transition ${ongletActif === key
+                                    ? "bg-bleu text-white"
+                                    : "bg-gray-100 text-gray-700 hover:bg-gray-300"
+                                    }`}>
+                                {label}
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            )}
 
             <div className="lg:grid lg:grid-cols-3 gap-6 overflow-x-auto scrollbar-custom flex lg:flex-none space-x-4 lg:space-x-0 px-1 lg:px-0">
 
@@ -546,15 +546,15 @@ const OngletsPacks = () => {
                             </div>
 
                             {/* Bouton */}
-                                <button className="bg-bleu hover:bg-blue-700 text-white text-sm py-2 rounded transition w-full">
-                                    Choisir ce pack
-                                </button>
+                            <button className="bg-bleu hover:bg-blue-700 text-white text-sm py-2 rounded transition w-full">
+                                Choisir ce pack
+                            </button>
                         </div>
                     </div>
                 ))}
             </div>
-            
-            
+
+
         </div>
     );
 };

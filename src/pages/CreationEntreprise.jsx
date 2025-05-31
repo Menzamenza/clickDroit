@@ -160,7 +160,7 @@ const CreationEntreprise = () => {
                     <p className=' merriweather-sans text-xl md:text-4xl font-extrabold  text-center'>Nos formules d'accompagnement</p>
                     <p className='text-sm md:text-lg text-center mt-4'>Des solutions à vos besoins et à votre budget</p>
                 </div>
-
+                
                 <OngletsPacks />
             </section>
 

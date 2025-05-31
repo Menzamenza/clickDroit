@@ -4,6 +4,11 @@ import Etape1 from "../components/Etapes1Creation";
 import Etape2 from "../components/Etapes2NomEntreprise";
 // Tu pourras importer Etape3, Etape4, etc., plus tard
 import Navbar from "../components/Navbar";
+import Etape3 from "../components/Etapes3Secteurs";
+import Etape4 from "../components/Etapes4Situation";
+import Etape5 from "../components/Etapes5Deja";
+import Etapes6 from "../components/Etapes6Packs";
+import Etape7 from "../components/Etapes7Infos";
 
 const CreationEtapes = () => {
     const [etape, setEtape] = useState(1);
@@ -52,14 +57,14 @@ const CreationEtapes = () => {
     return (
         <>
             <Navbar />
-            <div className="max-w-3xl mx-auto p-6 pt-30">
+            <div className="w-full lg:w-2/3 mx-auto px-6 pt-30">
                 <div className="flex flex-col md:flex-row items-center justify-between mb-4 gap-2 md:gap-0">
                     <button
                         onClick={handlePrev}
                         className="border border-gray-300 text-sm bg-gray-200 py-2 px-4 rounded hover:bg-gray-300">
                         ←Retour
                     </button>
-                    <p className="text-xl font-semibold text-center mb-4 text-nowrap">Création d’entreprise</p>
+                    <p className="text-xl font-semibold text-center text-nowrap">Création d’entreprise</p>
 
                     <div className="hidden md:block md:w-20 " /> {/* Espace vide pour équilibrer */}
                 </div>
@@ -83,13 +88,45 @@ const CreationEtapes = () => {
                         onSkip={handleSkip}
                     />
                 )}
+                {etape === 3 && (
+                    <Etape3
+                        secteur={data.secteur}
+                        onChange={(secteur) => setData((prev) => ({ ...prev, secteur }))}
+                        onNext={handleNext}
+                    />
+                )}
+                {etape === 4 && (
+                    <Etape4
+                        situation={data.situation}
+                        onChange={(situation) => setData((prev) => ({ ...prev, situation }))}
+                        onNext={handleNext}
+                    />
+                )}
+                {etape === 5 && (
+                    <Etape5
+                        dejaCree={data.dejaCree}
+                        onChange={(value) => setData((prev) => ({ ...prev, dejaCree: value }))}
+                        onNext={handleNext}
+                    />
+                )}
+                {etape === 6 && (
+                    <Etapes6
+                        formule={data.formule}
+                        onChange={(value) => setData((prev) => ({ ...prev, formule: value }))}
+                        onNext={handleNext}
+                    />
+                )}
+                {etape === 7 && (
+                    <Etape7
+                        value={data.infosPerso}
+                        onChange={(value) => setData((prev) => ({ ...prev, infosPerso: value }))}
+                        onNext={handleNext}
+                    />
+                )}
 
-                {/* Prévoir les étapes suivantes ici */}
-
-               
 
                 {etape <= 7 && (
-                    <div className=" text-center">
+                    <div className=" text-center mt-2">
                         <button
                             onClick={handleSkip}
                             className="text-sm text-gray-600 underline">
