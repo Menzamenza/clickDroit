@@ -261,13 +261,13 @@ function Home() {
                 </section>
 
                 {/* services section */}
-                <section className=' hidden relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 py-50'>
+                <section className='  relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 py-50'>
                     {/* Filigrane en fond */}
-                    <h2 className='absolute text-[120px] font-extrabold text-gray-300 opacity-20 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
+                    <h2 className='absolute  text-5xl lg:text-[120px] font-extrabold text-gray-300 opacity-20 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
                         SERVICES
                     </h2>
 
-                    <div className='relative z-10 w-2/3  text-start space-y-6 merriweather-sans'>
+                    <div className='relative z-10 w-full lg:w-2/3  text-start space-y-6 merriweather-sans'>
                         <p className='font-extrabold text-xl'>
                             Des solutions juridiques et fiscales <br /> sur mesure pour votre succès
                         </p>
@@ -279,7 +279,7 @@ function Home() {
                         </p>
                     </div>
 
-                    <div className="w-2/3 grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                    <div className=" w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
                         {servicesData.map(({ id, titre, description, bouton }) => (
                             <div key={id} className="bg-white text-xs border border-gray-200 hover:shadow-md hover:border-[#017EFF] text-start py-6 px-3 flex flex-col justify-between items-start ">
                                 <div>
@@ -295,13 +295,13 @@ function Home() {
                 </section>
 
                 {/* secteurs section */}
-                <section className='bg-[#017EFF] hidden relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-20 text-white'>
+                <section className='bg-[#017EFF]  relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-20 text-white'>
                     {/* Filigrane en fond */}
-                    <h2 className='absolute text-[120px] font-extrabold text-[#017AF7] opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
+                    <h2 className='absolute text-5xl lg:text-[120px] font-extrabold text-[#017AF7] opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
                         SECTEURS
                     </h2>
 
-                    <div className='relative z-10 w-2/3  text-start space-y-6 merriweather-sans'>
+                    <div className='relative z-10 w-full lg:w-2/3  text-start space-y-6 merriweather-sans'>
                         <p className='font-extrabold text-xl'>
                             Expertise sectorielle pour une <br /> croissance sans frontières
                         </p>
@@ -319,7 +319,7 @@ function Home() {
                         </button>
                     </div>
 
-                    <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 my-10">
+                    <div className="w-full lg:w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
                         {secteursData.map(({ id, image, chiffre, titre, description }) => (
                             <div
                                 key={id}
@@ -340,13 +340,13 @@ function Home() {
                 </section>
 
                 {/* temoignages section */}
-                <section className=' hidden relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-20'>
+                <section className='  relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-0 md:pb-20'>
                     {/* Filigrane en fond */}
-                    <h2 className='absolute text-[120px] font-extrabold text-gray-100 opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
+                    <h2 className='absolute text-4xl lg:text-[120px] font-extrabold text-gray-100 opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
                         TEMOIGNAGES
                     </h2>
 
-                    <div className='relative z-10 w-2/3  text-start space-y-6 merriweather-sans'>
+                    <div className='relative z-10 w-full lg:w-2/3  text-start space-y-6 merriweather-sans'>
                         <p className='font-extrabold text-xl'>
                             Votre succès, notre fierté
                         </p>
@@ -356,36 +356,58 @@ function Home() {
                             Rejoignez la communauté de nos clients satisfaits
                         </Button>
                     </div>
-
-                    <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 my-10">
-                        {temoinsdata.map(({ id, image, nom, entrep, description }) => (
-                            <div
-                                key={id}
-                                className=" flex flex-col border border-gray-200 p-3 transition-all duration-400 hover:shadow-md hover:shadow hover:border-[#017AF7] cursor-default"
-                            >
-                                <div className="flex items-center  gap-4 mb-4">
-                                    <img src={image} alt={entrep} className="" />
-                                    <div>
-
-                                        <p className="text-xs font-bold t">{nom}</p>
-                                        <h3 className="text-xs bleu mb-1">{entrep}</h3>
+                    <div className="w-full lg:w-2/3 mx-auto my-10">
+                        {/* Version mobile - défilement horizontal */}
+                        <div className="md:hidden overflow-x-auto pb-4">
+                            <div className="flex gap-4" style={{ minWidth: `${temoinsdata.length * 300}px` }}>
+                                {temoinsdata.map(({ id, image, nom, entrep, description }) => (
+                                    <div
+                                        key={id}
+                                        className="w-[280px] flex-shrink-0 flex flex-col border border-gray-200 p-3 transition-all duration-400 hover:shadow-md hover:shadow hover:border-[#017AF7] cursor-default"
+                                    >
+                                        <div className="flex items-center gap-4 mb-4">
+                                            <img src={image} alt={entrep} className="" />
+                                            <div>
+                                                <p className="text-xs font-bold t">{nom}</p>
+                                                <h3 className="text-xs bleu mb-1">{entrep}</h3>
+                                            </div>
+                                        </div>
+                                        <p className="text-xs font-thin leading-loose">{description}</p>
                                     </div>
-                                </div>
-
-                                <p className=" text-xs font-thin leading-loose">{description}</p>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Version desktop - grille normale */}
+                        <div className="hidden md:grid grid-cols-3 gap-10 my-10">
+                            {temoinsdata.map(({ id, image, nom, entrep, description }) => (
+                                <div
+                                    key={id}
+                                    className="flex flex-col border border-gray-200 p-3 transition-all duration-400 hover:shadow-md hover:shadow hover:border-[#017AF7] cursor-default"
+                                >
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <img src={image} alt={entrep} className="" />
+                                        <div>
+                                            <p className="text-xs font-bold t">{nom}</p>
+                                            <h3 className="text-xs bleu mb-1">{entrep}</h3>
+                                        </div>
+                                    </div>
+                                    <p className="text-xs font-thin leading-loose">{description}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
+
                 </section>
 
                 {/* blog section */}
-                <section className=' hidden relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-20'>
+                <section className=' relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50  pb-0 md:pb-20'>
                     {/* Filigrane en fond */}
-                    <h2 className='absolute text-[120px] font-extrabold text-gray-100 opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
+                    <h2 className='absolute text-5xl lg:text-[120px] font-extrabold text-gray-100 opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
                         BLOG
                     </h2>
 
-                    <div className='relative z-10 w-2/3  text-start merriweather-sans'>
+                    <div className='relative z-10 w-full lg:w-2/3  text-start merriweather-sans'>
                         <p className='font-extrabold text-xl'>
                             Conseils et insights pour naviguer <br /> dans le monde juridique et fiscal
                         </p>
@@ -401,35 +423,57 @@ function Home() {
                             Explorer notre blog pour plus d'insights
                         </Button>
                     </div>
-
-                    <div className="w-2/3 grid grid-cols-1 md:grid-cols-3 gap-5 my-10">
-                        {blogData.map(({ id, image, titre, description, bouton }) => (
-                            <div
-                                key={id}
-                                className=" flex flex-col items-center justify-between border border-gray-200 transition-all duration-400 hover:shadow-md hover:shadow hover:border-[#017AF7] cursor-default">
-                                <img src={image} alt={titre} className="" />
-
-                                <div className='p-2'>
-                                    <p className="text-xs font-semibold">{titre}</p>
-                                    <h3 className="text-xs leading-loose  mb-1">{description}</h3>
-                                    <Button>
-                                        {bouton}
-                                    </Button>
-                                </div>
-
+                    <div className="w-full lg:w-2/3 mx-auto ">
+                        {/* Version mobile - défilement horizontal */}
+                        <div className="md:hidden overflow-x-auto pb-4 my-10">
+                            <div className="flex gap-4" style={{ minWidth: `${blogData.length * 300}px` }}>
+                                {blogData.map(({ id, image, titre, description, bouton }) => (
+                                    <div
+                                        key={id}
+                                        className="w-[280px] flex-shrink-0 flex flex-col items-center justify-between border border-gray-200 transition-all duration-400 hover:shadow-md hover:shadow hover:border-[#017AF7] cursor-default"
+                                    >
+                                        <img src={image} alt={titre} className="w-full" />
+                                        <div className='p-2 w-full'>
+                                            <p className="text-xs font-semibold">{titre}</p>
+                                            <h3 className="text-xs leading-loose mb-1">{description}</h3>
+                                            <Button className="w-full">
+                                                {bouton}
+                                            </Button>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Version desktop - grille normale */}
+                        <div className="hidden md:grid grid-cols-3 gap-5 my-10">
+                            {blogData.map(({ id, image, titre, description, bouton }) => (
+                                <div
+                                    key={id}
+                                    className="flex flex-col items-center justify-between border border-gray-200 transition-all duration-400 hover:shadow-md hover:shadow hover:border-[#017AF7] cursor-default"
+                                >
+                                    <img src={image} alt={titre} className="w-full" />
+                                    <div className='p-2 w-full'>
+                                        <p className="text-xs font-semibold">{titre}</p>
+                                        <h3 className="text-xs leading-loose mb-1">{description}</h3>
+                                        <Button className="w-full">
+                                            {bouton}
+                                        </Button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
                 {/* section contact */}
-                <section className='bg-[#F7FBFF] hidden relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-20'>
+                <section className='bg-[#F7FBFF]  relative min-h-[500px] lg:flex flex-col items-center justify-center px-6 pt-50 pb-20'>
                     {/* Filigrane en fond */}
-                    <h2 className='absolute text-[120px] font-extrabold text-gray-100 opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
+                    <h2 className='absolute text-5xl lg:text-[120px] font-extrabold text-gray-100 opacity-80 top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none'>
                         CONTACT
                     </h2>
 
-                    <div className='relative z-10 w-2/3  text-start merriweather-sans'>
+                    <div className='relative z-10 w-full lg:w-2/3  text-start merriweather-sans'>
                         <p className='font-extrabold text-xl'>
                             Parlons de votre projet
                         </p>
@@ -441,7 +485,7 @@ function Home() {
 
                     </div>
 
-                    <div className="w-2/3 flex flex-col lg:flex-row items-start justify-between bg-white ">
+                    <div className=" w-full lg:w-2/3 flex flex-col lg:flex-row items-start justify-between bg-white ">
 
                         {/* Partie gauche : Formulaire */}
                         <div className="w-full lg:w-1/2 px-5 bg-white">
@@ -489,7 +533,7 @@ function Home() {
                         </div>
 
                         {/* Partie droite : Image */}
-                        <div className="w-full lg:w-2/3 flex justify-center">
+                        <div className=" hidden lg:block w-full lg:w-2/3 flex justify-center">
                             <img
                                 src={contactImage}
                                 alt="Contact Illustration"
@@ -500,7 +544,7 @@ function Home() {
                 </section>
             </div>
 
-            <section className=' hidden lg:block'>
+            <section className=' '>
                 <Footer />
             </section>
         </>

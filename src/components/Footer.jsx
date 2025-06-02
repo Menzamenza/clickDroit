@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 const Footer = () => {
     return (
         <footer className="bg-[#017EFF] text-white py-10 ">
-            <div className="w-2/3 mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-3">
+            <div className=" w-full lg:w-2/3 mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-3">
                 <div>
                     <img src={logo} alt="" className="border rounded mb-1" />
                     <p className="text-xs ">
@@ -16,10 +16,11 @@ const Footer = () => {
                 <div>
                     <h3 className="text-lg font-semibold mb-4">MENU</h3>
                     <ul className="space-y-2 text-xs text-gray-200">
-                        <li><a href="/" className="hover:border-b hover:text-white">A propos</a></li>
-                        <li><a href="/services" className="hover:border-b hover:text-white">Services</a></li>
-                        <li><a href="/equipe" className="hover:border-b hover:text-white">Secteurs d'activité</a></li>
-                        <li><a href="/contact" className="hover:border-b hover:text-white">Blog</a></li>
+                        <li><a href="/" className="hover:border-b hover:text-white">Accueil</a></li>
+                        <li><a href="/creation" className="hover:border-b hover:text-white">Creation d'entreprise</a></li>
+                        <li><a href="/gestion" className="hover:border-b hover:text-white">Gestion d'entreprise</a></li>
+                        <li><a href="/consultation" className="hover:border-b hover:text-white">Consultation d'expert</a></li>
+                        <li><a href="/propos" className="hover:border-b hover:text-white">A propos</a></li>
                     </ul>
                 </div>
 

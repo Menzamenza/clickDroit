@@ -10,11 +10,10 @@ const Navbar = () => {
 
     const navItems = [
         { name: 'Accueil', to: '/' },
-        { name: 'À propos', to: 'propos' },
         { name: 'Création d\'entreprise', to: '/creation' },
-        { name: 'Services', to: '/services' },
-        { name: 'Secteurs d\'activité', to: '/secteurs' },
-        { name: 'Contact', to: '/contact' },
+        { name: 'Gestion d\'entreprise', to: '/gestion' },
+        { name: 'Consultation expert', to: '/consultation' },
+        { name: 'À propos', to: 'propos' },
     ];
 
     return (
