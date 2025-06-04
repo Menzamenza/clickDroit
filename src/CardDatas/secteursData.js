@@ -4,6 +4,9 @@ import sect3 from "../assets/sect3.png";
 import sect4 from "../assets/sect4.png";
 import sect5 from "../assets/sect5.png";
 import sect6 from "../assets/sect6.png";
+import expert from "../assets/expert.png";
+import solution from "../assets/solution.png";
+import suivi from "../assets/suivi.png";
 
 const secteursData = [
   {
@@ -51,3 +54,25 @@ const secteursData = [
 ];
 
 export default secteursData;
+
+export const valeurs = [
+   {
+    id: 1,
+    image: expert,
+    titre: "Expertise validée",
+    description: "Des consultants avec minimum 10 ans d'expériences."
+  },
+  {
+    id: 2,
+    image: solution,
+    titre: " Solutions sur mesure",
+    description: "Adaptées à votre contexte spécifique."
+  },
+  {
+    id: 3,
+    image: suivi,
+    titre: "Suivi de qualité",
+    description: "Accompagnement continu pour vos démarches."
+  }
+]
+

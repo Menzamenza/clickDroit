@@ -1,8 +1,7 @@
-
 import { useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-const Button = ({ onClick, children }) => {
+const Button = ({ onClick, children, className = "" }) => {
     const [isActive, setIsActive] = useState(false);
 
     const handleTouch = () => {
@@ -18,7 +17,7 @@ const Button = ({ onClick, children }) => {
             onMouseLeave={() => setIsActive(false)}
             className={`group relative overflow-hidden text-blue-500 border-2 border-blue-500 pr-5 pl-5 py-2 font-semibold text-sm transition-all duration-300 bg-gradient-hover ${
                 isActive ? "pr-10 text-white bg-blue-500" : ""
-            }`}
+            } ${className}`} // Ajout de la prop className
         >
             {/* Icône */}
             <span
