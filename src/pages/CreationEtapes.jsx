@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Etape1 from "../components/Etapes1Creation";
 import Etape2 from "../components/Etapes2NomEntreprise";
-// Tu pourras importer Etape3, Etape4, etc., plus tard
 import Navbar from "../components/Navbar";
 import Etape3 from "../components/Etapes3Secteurs";
 import Etape4 from "../components/Etapes4Situation";

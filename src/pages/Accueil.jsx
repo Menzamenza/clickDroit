@@ -22,10 +22,16 @@ import secteursData from '../CardDatas/secteursData';
 import temoinsdata from '../CardDatas/temoinDatas';
 import { blogData } from '../CardDatas/blogData';
 import Footer from '../components/Footer';
+import { useNavigate } from "react-router-dom";
 
 
 
 function Home() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/creation");
+    };
     return (
         <>
             <Navbar />
@@ -37,6 +43,14 @@ function Home() {
                         <div className=''>
                             <p className='merriweather-sans leading-tight text-3xl md:text-5xl font-bold'>La plateforme qui <br /> <span className='bg-[#EBC000] transform -rotate-4 rounded inline-block'>simplifie</span> la vie des  <br />entrepreneurs.</p>
                             <p className='font-bold text-base md:text-lg  leading-loose'>Confiez vos démarches juridiques, fiscales et administratives à des experts spécialisés.</p>
+                            <div className="flex flex-col md:flex-row mt-3 gap-5 items-center mt-2 ">
+                                <Button
+                                    onClick={handleClick}
+                                    className="bg-white hover:bg-white font-bold py-2 px-4 border-white">
+                                    Creer mon entreprise
+                                </Button>
+                                <Button className="text-white border-white">En savoir plus</Button>
+                            </div>
                         </div>
                         <div className=''>
                             <img src={hero} alt="hero image" className='' />

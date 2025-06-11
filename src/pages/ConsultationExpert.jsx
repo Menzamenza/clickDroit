@@ -12,7 +12,7 @@ function Consultation() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/creation");
+        navigate("/consultation/etapes");
     };
     return (
         <>
