@@ -104,7 +104,7 @@ const Etape7 = ({ value, onChange, onNext }) => {
             <div className="text-center">
                 <p className="text-sm mt-4 underline">
                     J’ai déjà un compte ?{" "}
-                    <a href="/connexion" className="hover:underline">
+                    <a href="/login" className="hover:underline">
                         Me connecter
                     </a>
                 </p>

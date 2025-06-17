@@ -104,7 +104,7 @@ const Etape4Consultation = ({ value, onChange, onNext }) => {
             <div className="text-center">
                 <p className="text-sm underline">
                     J’ai déjà un compte ?{" "}
-                    <a href="/connexion" className="hover:underline">
+                    <a href="/login" className="hover:underline">
                         Me connecter
                     </a>
                 </p>
