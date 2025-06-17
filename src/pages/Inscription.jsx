@@ -128,6 +128,7 @@ const Register = () => {
                             <input
                                 type="checkbox"
                                 className='mr-2'
+                                required
                             />
                             J'accepte les <span className="bleu hover:underline">Conditions Générales d'Utilisations</span> et la <span className="bleu hover:underline">Politique de Confidentialité</span>
                         </label>
