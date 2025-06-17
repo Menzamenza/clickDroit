@@ -6,6 +6,8 @@ import Home from './pages/Accueil';
 import CreationEtapes from './pages/CreationEtapes';
 import Consultation from './pages/ConsultationExpert';
 import ConsultationEtapes from './pages/ConsultationEtapes';
+import Login from './pages/Connexion';
+import Register from './pages/Inscription';
 
 
 function App() {
@@ -17,7 +19,8 @@ function App() {
         <Route path="/creation/:typeId" element={<CreationEtapes />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/consultation/etapes" element={<ConsultationEtapes />} />
-
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

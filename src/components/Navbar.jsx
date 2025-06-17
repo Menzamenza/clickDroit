@@ -1,19 +1,24 @@
-
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import logo from "../assets/logo.svg";
 import { ArrowRightEndOnRectangleIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [isActive, setIsActive] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleClick = () => {
+        navigate('/login');
+    };
 
     const navItems = [
         { name: 'Accueil', to: '/' },
         { name: 'Création d\'entreprise', to: '/creation' },
         { name: 'Gestion d\'entreprise', to: '/gestion' },
         { name: 'Consultation expert', to: '/consultation' },
-        { name: 'À propos', to: 'propos' },
+        { name: 'À propos', to: '/propos' },
     ];
 
     return (
@@ -46,12 +51,12 @@ const Navbar = () => {
                         onClick={() => {
                             setIsActive(true);
                             setTimeout(() => setIsActive(false), 1500);
+                            handleClick();
                         }}
                         onMouseEnter={() => setIsActive(true)}
                         onMouseLeave={() => setIsActive(false)}
                         className={`group relative overflow-hidden text-blue-500 md:border-2 md:border-blue-500 pr-5 pl-5 py-2 font-semibold text-sm transition-all duration-300 ${isActive ? "pr-10" : ""
-                            }`}
-                    >
+                            }`}>
                         <span
                             className={`absolute right-3 top-1/2 -translate-y-1/2 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"
                                 }`}>
@@ -98,6 +103,7 @@ const Navbar = () => {
                     onClick={() => {
                         setIsActive(true);
                         setTimeout(() => setIsActive(false), 1500);
+                        handleClick(); 
                         // redirection ou logique de connexion
                     }}
                     onMouseEnter={() => setIsActive(true)}
